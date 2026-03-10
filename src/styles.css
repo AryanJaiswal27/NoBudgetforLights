@@ -1,0 +1,244 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:black;
+  color:white;
+  margin:0;
+}
+
+section{
+  min-height:100vh;
+  padding:80px 20px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  text-align:center;
+}
+
+
+
+.gameCanvas{
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.hero{
+  min-height:100vh;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  padding:40px 20px;
+
+  gap:70px; /* controls spacing */
+}
+
+/* text area */
+
+.heroContent{
+  max-width:800px;
+}
+
+/* game area */
+
+.heroGame{
+  width:100%;
+  display:flex;
+  justify-content:center;
+}
+
+.logo{
+    font-size:100px;
+  font-weight:bold;
+  letter-spacing:3px;
+  margin-bottom: 10px;
+
+  color:white;
+
+  text-shadow:
+    0 0 5px white,
+    0 0 15px white,
+    0 0 30px white,
+    0 0 60px white;
+}
+
+/* flicker animation */
+
+@keyframes flicker {
+
+  0% {opacity:1}
+  20% {opacity:0.6}
+  40% {opacity:1}
+  50% {opacity:0.3}
+  60% {opacity:1}
+  80% {opacity:0.7}
+  100% {opacity:1}
+
+}
+
+.logo:hover{
+  animation:flicker 0.4s infinite;
+}
+
+.tagline{
+  font-size:22px;
+  margin-bottom:20px;
+  opacity:0.85;
+}
+
+.description{
+  font-size:16px;
+  line-height:1.6;
+  opacity:0.7;
+  margin-bottom:30px;
+}
+
+.heroButtons{
+  display:flex;
+  gap:20px;
+  justify-content:center;
+}
+
+.heroButtons button{
+
+  background:white;
+  color:black;
+
+  border:none;
+  padding:14px 28px;
+
+  font-size:16px;
+  font-weight:bold;
+
+  cursor:pointer;
+  border-radius:6px;
+
+  transition:0.2s;
+}
+
+.heroButtons button:hover{
+  transform:scale(1.05);
+}
+
+.torch{
+  position:fixed;
+  inset:0;
+
+  pointer-events:none;
+  z-index:999;
+
+  background:radial-gradient(
+    circle 120px at center,
+    transparent 0%,
+    rgba(0,0,0,0.4) 40%,
+    rgba(0,0,0,0.85) 70%,
+    black 100%
+  );
+}
+
+.torch{
+  animation:torchFlicker 0.15s infinite alternate;
+}
+
+@keyframes torchFlicker{
+  from{ filter:brightness(1); }
+  to{ filter:brightness(1.15); }
+}
+
+.guide {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  padding: 40px 20px; /* Added padding so items don't hit screen edges */
+}
+
+.guideTitle {
+  font-size: 56px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.guideItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 25px;
+  
+  /* --- NEW STYLES TO FIX CONFUSION --- */
+  padding: 40px; 
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.03); /* Very subtle "island" effect */
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background 0.3s ease;
+}
+
+/* Connect the hover effect to the whole item so the text and image react together */
+.guideItem:hover {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.guideItem img {
+  width: 100%;
+  max-width: 900px;
+  border-radius: 12px;
+  border: 2px solid #333;
+  transition: 0.3s;
+}
+
+/* Image reacts when the user hovers anywhere in the guideItem */
+.guideItem:hover img {
+  transform: scale(1.02);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+  border-color: #555;
+}
+
+.guideText {
+  max-width: 700px;
+}
+
+.guideText h3 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #fff; /* Ensures header stands out */
+}
+
+.guideText p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #ccc; /* Slightly dimmer than header for hierarchy */
+}
+
+.guideTitle {
+  font-size: 56px;
+  text-align: center;
+  margin-bottom: 40px; /* Increased slightly to give the glow room */
+  color: white;
+  font-weight: bold;
+  letter-spacing: 3px;
+  transition: 0.3s;
+  
+  /* Applying your logo glow style here */
+  text-shadow:
+    0 0 5px white,
+    0 0 15px white,
+    0 0 30px white,
+    0 0 60px white;
+}
+
+/* Trigger the flicker when hovering over the title */
+.guideTitle:hover {
+  animation: flicker 0.4s infinite;
+  cursor: default;
+}
