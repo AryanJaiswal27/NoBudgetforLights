@@ -2,7 +2,7 @@ function Download() {
   return (
     <section>
 
-      <h2>Download</h2>
+      <h2>Downloads</h2>
 
       <div style={{marginTop:"30px"}}>
         <button>Windows</button>
