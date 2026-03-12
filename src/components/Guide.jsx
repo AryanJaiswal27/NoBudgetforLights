@@ -16,17 +16,33 @@ function Guide() {
 
 
 
-  <div className="guideItem">
-    <img src={controls} alt="controls" />
-    <div className="guideText">
-      <h3>Controls</h3>
-      <p><b>Windows / PC</b></p>
-      <p>A / D → Move</p>
-      <p>Space → Jump</p>
-      <p><b>Android</b></p>
-      <p>Use the on-screen arrow buttons.</p>
-    </div>
+<div className="guideItem">
+  <img src={controls} alt="controls" />
+
+  <div className="guideText">
+    <h3>Controls</h3>
+
+    <p><b>Windows / PC</b></p>
+
+    <p className="controlRow">
+      <span className="key">A</span>
+      <span className="key">D</span>
+      <span className="arrow">→</span>
+      Move
+    </p>
+
+    <p className="controlRow">
+      <span className="key">Space</span>
+      <span className="arrow">→</span>
+      Jump
+    </p>
+
+    <p><b>Android</b></p>
+    <p className="controlRow">
+      Use the on-screen arrow buttons.
+    </p>
   </div>
+</div>
 
   <div className="guideItem">
     <img src={torch} alt="torch" />
